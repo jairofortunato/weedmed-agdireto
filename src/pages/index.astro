@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header'
-import Hero from '../components/Hero'
+import HeaderStatic from '../components/HeaderStatic.astro'
+import HeroStatic from '../components/HeroStatic.astro'
 import VideoTestimonials from '../components/VideoTestimonials'
 import Benefits from '../components/Benefits'
 import ProblemPicker from '../components/ProblemPicker'
@@ -17,8 +17,11 @@ import Footer from '../components/Footer'
 
 <Layout title="WeedMed - Cannabis Medicinal">
   <div class="min-h-screen bg-gray-50">
-    <Header client:load />
-    <Hero client:load />
+    <!-- Above the fold - Static HTML for fast LCP -->
+    <HeaderStatic currentPath="/" />
+    <HeroStatic />
+
+    <!-- Below the fold - Hydrated when visible -->
     <VideoTestimonials client:visible />
     <Benefits client:visible />
     <ProblemPicker client:visible />
@@ -29,6 +32,6 @@ import Footer from '../components/Footer'
     <ExplainerVideo client:visible />
     <FAQ client:visible />
     <Partners client:visible />
-    <Footer client:idle />
+    <Footer />
   </div>
 </Layout>

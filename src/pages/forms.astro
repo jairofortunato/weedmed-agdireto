@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header'
+import HeaderStatic from '../components/HeaderStatic.astro'
 ---
 
 <Layout title="WeedMed - Formularios">
   <div class="min-h-screen bg-gray-50">
-    <Header client:load />
+    <HeaderStatic currentPath="/forms" />
     <div class="flex items-center justify-center min-h-[calc(100vh-200px)]">
       <h1
         class="text-4xl md:text-5xl lg:text-6xl text-gray-800 text-center font-medium"

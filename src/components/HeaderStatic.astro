@@ -1,0 +1,140 @@
+---
+interface Props {
+  currentPath?: string
+}
+
+const { currentPath = '/' } = Astro.props
+---
+
+<header class="w-full">
+  <!-- Promotional Banner -->
+  <div class="py-2 text-center" style="background-color: #65DFA8;">
+    <button class="open-chat text-sm font-medium text-gray-900 underline hover:no-underline">
+      Inicie seu tratamento em menos de 1 semana com preço acessível →
+    </button>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="bg-white border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-24">
+        <!-- Logo -->
+        <a href="/" class="flex-shrink-0">
+          <img
+            src="/logologo.webp"
+            alt="Weedmed"
+            class="h-12 w-auto"
+            width="120"
+            height="48"
+            loading="eager"
+          />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-10">
+          <a
+            href="/#como-funciona"
+            class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors"
+          >
+            Como funciona
+          </a>
+          <a
+            href="/#especialistas"
+            class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors"
+          >
+            Especialistas
+          </a>
+          <a
+            href="/#depoimentos"
+            class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors"
+          >
+            Depoimentos
+          </a>
+        </div>
+
+        <!-- Right Side Actions -->
+        <div class="flex items-center">
+          <button
+            class="open-chat hidden lg:inline-flex relative items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out header-cta"
+          >
+            Começar agora
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <button
+            type="button"
+            class="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 mobile-menu-btn"
+            aria-label="Abrir menu"
+          >
+            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default, toggled via JS) -->
+    <div id="mobile-menu" class="lg:hidden bg-white border-t border-gray-100 shadow-xl hidden">
+      <div class="px-6 py-6 space-y-4 flex flex-col">
+        <a href="/#como-funciona" class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors text-left">
+          Como funciona
+        </a>
+        <a href="/#especialistas" class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors text-left">
+          Especialistas
+        </a>
+        <a href="/#depoimentos" class="text-base font-medium text-gray-700 hover:text-[#523AC5] transition-colors text-left">
+          Depoimentos
+        </a>
+        <button class="open-chat relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out header-cta">
+          Começar agora
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .header-cta {
+    background: linear-gradient(135deg, #523AC5 0%, #7c5ce7 100%);
+    box-shadow: 0 10px 30px rgba(82, 58, 197, 0.3);
+  }
+
+  .header-cta:hover {
+    background: linear-gradient(135deg, #3d2a8f 0%, #523AC5 100%);
+  }
+</style>
+
+<script>
+  // Mobile menu toggle - minimal JS for interactivity
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a, button').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href && window.location.pathname === '/') {
+        e.preventDefault();
+        const targetId = href.replace('/#', '');
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>

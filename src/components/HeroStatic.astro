@@ -1,0 +1,137 @@
+---
+// Hero estático para LCP otimizado - renderiza HTML puro sem esperar React/JS
+---
+
+<section
+  class="w-full overflow-hidden hero-section"
+>
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative">
+    <!-- Right Image - Renderizado estaticamente para LCP -->
+    <div class="absolute -right-20 md:-right-10 lg:right-8 -bottom-12 md:-bottom-16 lg:-bottom-10 pointer-events-none hero-image">
+      <img
+        src="/woman2.webp"
+        alt="Paciente satisfeita"
+        fetchpriority="high"
+        decoding="sync"
+        loading="eager"
+        width="413"
+        height="620"
+        class="h-[350px] md:h-[450px] lg:h-[620px] w-auto object-contain object-bottom"
+      />
+    </div>
+
+    <!-- Left Content -->
+    <div class="relative z-10 py-16 md:py-20 lg:py-28 lg:max-w-[60%]">
+      <!-- Google Reviews Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-8 hero-badge">
+        <img
+          src="/googleavaliacoes.png"
+          alt="Google 5 estrelas"
+          class="h-5 w-auto"
+          loading="eager"
+          width="100"
+          height="20"
+        />
+        <span class="text-white text-sm font-medium">
+          + 3.000 pacientes atendidos
+        </span>
+      </div>
+
+      <!-- Title - LCP Element -->
+      <h1
+        class="text-[1.75rem] md:text-5xl lg:text-6xl text-white mb-6 leading-tight font-bold hero-title"
+        style="font-family: Inter, system-ui, sans-serif;"
+      >
+        <!-- Mobile version -->
+        <span class="block md:hidden">Não viva com dor,</span>
+        <span class="block md:hidden">ansiedade ou insônia</span>
+        <!-- Desktop version -->
+        <span class="hidden md:block md:whitespace-nowrap">Não viva com insônia,</span>
+        <span class="hidden md:block md:whitespace-nowrap">dor ou ansiedade</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-lg md:text-xl text-white/90 mb-10 max-w-[60%] md:max-w-[55%] lg:max-w-xl leading-relaxed hero-subtitle">
+        Cannabis medicinal com avaliação médica e suporte humano em todas as etapas
+      </p>
+
+      <!-- CTA Button -->
+      <button
+        class="open-chat inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out hover:scale-105 hero-cta"
+      >
+        Começar agora
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 50%, #6d28d9 100%);
+  }
+
+  .hero-cta {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+  }
+
+  .hero-cta:hover {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 50%, #166534 100%);
+  }
+
+  /* Animações suaves após o carregamento - não bloqueiam LCP */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-image {
+      animation: slideInRight 0.8s ease-out 0.1s both;
+    }
+
+    .hero-badge {
+      animation: fadeInDown 0.6s ease-out 0.1s both;
+    }
+
+    .hero-title {
+      animation: fadeInUp 0.7s ease-out 0.15s both;
+    }
+
+    .hero-subtitle {
+      animation: fadeInUp 0.7s ease-out 0.2s both;
+    }
+
+    .hero-cta {
+      animation: fadeInUp 0.7s ease-out 0.25s both;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

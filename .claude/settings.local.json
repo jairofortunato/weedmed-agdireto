@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(npx vite --open)",
+      "Bash(lsof:*)",
+      "Bash(npx tsc:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(ls:*)",
+      "Bash(cwebp:*)",
+      "Bash(du:*)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed status:*)",
+      "Bash(GIT_DIR=/Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed/.git GIT_WORK_TREE=/Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed git status:*)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed remote add:*)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed branch:*)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed add .gitignore CLAUDE.md README.md astro.config.mjs eslint.config.js package-lock.json package.json postcss.config.js public/ src/ tailwind.config.mjs tsconfig.json)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed commit -m \"$\\(cat <<''EOF''\nMigrate to Astro with cookie consent and legal pages\n\n- Migrate from Vite/React SPA to Astro MPA for proper GTM tracking\n- Add Google Consent Mode v2 for LGPD compliance\n- Add cookie consent banner\n- Add privacy policy page \\(/politica-de-privacidade\\)\n- Add terms of use page \\(/termos-de-uso\\)\n- Add legal disclaimers to footer\n- Optimize LCP \\(preload fonts, images, remove opacity animations\\)\n- Update Header for Astro file-based routing\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed push -u origin main --force)",
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed add:*)"
+    ]
+  }
+}

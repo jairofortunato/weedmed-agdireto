@@ -1,13 +1,12 @@
 ---
-import '../styles/global.css'
-import CookieConsent from '../components/CookieConsent'
+import CookieBanner from '../components/CookieBanner.astro'
 
 interface Props {
   title: string
+  description?: string
 }
 
-const { title } = Astro.props
-const isHomePage = Astro.url.pathname === '/'
+const { title, description = 'Cannabis medicinal com avaliação médica e suporte humano em todas as etapas' } = Astro.props
 ---
 
 <!doctype html>
@@ -16,55 +15,29 @@ const isHomePage = Astro.url.pathname === '/'
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
     <title>{title}</title>
 
-    <!-- Preconnect to external domains (before other resources) -->
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/woman2.webp" as="image" fetchpriority="high" type="image/webp" />
+    <link rel="preload" href="/logologo.webp" as="image" type="image/webp" />
+
+    <!-- Preload Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="dns-prefetch" href="https://cdn.leadster.com.br" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
 
-    <!-- Preload Inter font for LCP text -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      as="style"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://cdn.trustindex.io" />
+    <!-- Meta Pixel preconnect -->
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://www.facebook.com" />
 
-    {isHomePage && (
-      <link rel="preload" as="image" href="/woman2.webp" type="image/webp" fetchpriority="high" />
-    )}
-
-    <!-- Google Consent Mode v2 - MUST be before GTM -->
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Default consent state (denied until user accepts)
-      gtag('consent', 'default', {
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied',
-        'analytics_storage': 'denied',
-        'wait_for_update': 500
-      });
-
-      // Check if user already consented
-      if (localStorage.getItem('cookie_consent') === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      }
-    </script>
-
-    <!-- Google Tag Manager - Loads regardless of consent (Consent Mode controls behavior) -->
+    <!-- Google Tag Manager -->
     <script is:inline>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -84,8 +57,8 @@ const isHomePage = Astro.url.pathname === '/'
 
     <slot />
 
-    <!-- Cookie Consent Banner -->
-    <CookieConsent client:idle />
+    <!-- Cookie Banner -->
+    <CookieBanner />
 
     <!-- Leadster -->
     <script is:inline>
@@ -94,3 +67,13 @@ const isHomePage = Astro.url.pathname === '/'
     <!-- End Leadster -->
   </body>
 </html>
+
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  html, body {
+    overflow-x: hidden;
+  }
+</style>

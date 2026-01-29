@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import VideoTestimonials from '../components/VideoTestimonials'
+import Benefits from '../components/Benefits'
+import ProblemPicker from '../components/ProblemPicker'
+import Steps from '../components/Steps'
+import TestimonialCarousel from '../components/TestimonialCarousel'
+import Doctors from '../components/Doctors'
+import WrittenTestimonials from '../components/WrittenTestimonials'
+import ExplainerVideo from '../components/ExplainerVideo'
+import FAQ from '../components/FAQ'
+import Partners from '../components/Partners'
+import Footer from '../components/Footer'
+---
+
+<Layout title="WeedMed - Cannabis Medicinal">
+  <div class="min-h-screen bg-gray-50">
+    <Header client:load />
+    <Hero client:load />
+    <VideoTestimonials client:visible />
+    <Benefits client:visible />
+    <ProblemPicker client:visible />
+    <Steps client:visible />
+    <TestimonialCarousel client:visible />
+    <Doctors client:visible />
+    <WrittenTestimonials client:visible />
+    <ExplainerVideo client:visible />
+    <FAQ client:visible />
+    <Partners client:visible />
+    <Footer client:idle />
+  </div>
+</Layout>

@@ -1,0 +1,6 @@
+# Allow all crawlers to access all content
+User-agent: *
+Allow: /
+
+# Sitemap (optional - add your sitemap URL if you have one)
+# Sitemap: https://seudominio.com/sitemap.xml

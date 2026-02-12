@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro'
+import HeaderStatic from '../components/HeaderStatic.astro'
+import Footer from '../components/Footer'
+import ThankYouContent from '../components/ThankYouContent'
+---
+
+<Layout title="Agendamento Confirmado - Weedmed" description="Seu agendamento foi confirmado com sucesso. Em breve entraremos em contato.">
+  <div class="min-h-screen bg-gray-50">
+    <HeaderStatic currentPath="/agendamento-obrigado" />
+    <ThankYouContent client:load />
+    <Footer />
+  </div>
+</Layout>

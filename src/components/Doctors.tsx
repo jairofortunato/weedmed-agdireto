@@ -118,7 +118,7 @@ function Doctors() {
 
             {/* CTA Button */}
             <a
-              href="https://weedmedcare.lovable.app/"
+              href="https://weedmedcare.lovable.app/comecar"
               className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
               style={{
                 background: 'linear-gradient(135deg, #523AC5 0%, #7c5ce7 100%)',

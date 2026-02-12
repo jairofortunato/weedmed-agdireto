@@ -70,7 +70,7 @@ function Hero() {
 
           {/* CTA Button */}
           <motion.a
-            href="https://weedmedcare.lovable.app/"
+            href="https://weedmedcare.lovable.app/comecar"
             className="inline-flex items-center justify-center px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out"
             style={{
               background: 'linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%)',

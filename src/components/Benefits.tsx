@@ -131,7 +131,7 @@ function Benefits() {
                   {benefit.description}
                 </p>
                 <a
-                  href="https://weedmedcare.lovable.app/"
+                  href="https://weedmedcare.lovable.app/comecar"
                   onClick={(e) => e.stopPropagation()}
                   className="px-4 py-2 text-sm font-semibold text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 inline-block"
                   style={{

@@ -19,7 +19,7 @@ function Header() {
       {/* Promotional Banner */}
       <div className="py-2 text-center" style={{ backgroundColor: '#65DFA8' }}>
         <a
-          href="https://weedmedcare.lovable.app/"
+          href="https://weedmedcare.lovable.app/comecar"
           className="text-sm font-medium text-gray-900 underline hover:no-underline"
         >
           Inicie seu tratamento em menos de 1 semana com preço acessível →
@@ -64,7 +64,7 @@ function Header() {
             {/* Right Side Actions */}
             <div className="flex items-center">
               <a
-                href="https://weedmedcare.lovable.app/"
+                href="https://weedmedcare.lovable.app/comecar"
                 className="hidden lg:inline-flex relative items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
                 style={{
                   background: 'linear-gradient(135deg, #523AC5 0%, #7c5ce7 100%)',
@@ -128,7 +128,7 @@ function Header() {
                 Depoimentos
               </button>
               <a
-                href="https://weedmedcare.lovable.app/"
+                href="https://weedmedcare.lovable.app/comecar"
                 onClick={() => setIsMenuOpen(false)}
                 className="relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out"
                 style={{

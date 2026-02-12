@@ -117,8 +117,9 @@ function Doctors() {
             </div>
 
             {/* CTA Button */}
-            <button
-              className="open-chat inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
+            <a
+              href="https://weedmedcare.lovable.app/"
+              className="inline-flex items-center gap-2 px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
               style={{
                 background: 'linear-gradient(135deg, #523AC5 0%, #7c5ce7 100%)',
                 boxShadow: '0 10px 30px rgba(82, 58, 197, 0.3)',
@@ -140,7 +141,7 @@ function Doctors() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </button>
+            </a>
           </div>
 
           {/* Right Content - Doctor Cards */}

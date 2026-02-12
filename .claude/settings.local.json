@@ -25,7 +25,10 @@
       "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed push)",
       "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed commit -m \"Update local settings\")",
       "Bash(grep:*)",
-      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed commit -m \"Change title to Weedmed\")"
+      "Bash(git -C /Users/jairofortunato/Desktop/Desktop2/weedmed-com-canna/weedmed commit -m \"Change title to Weedmed\")",
+      "Bash(git remote remove:*)",
+      "Bash(git remote add:*)",
+      "Bash(npx astro build:*)"
     ]
   }
 }

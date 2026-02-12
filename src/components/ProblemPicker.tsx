@@ -115,9 +115,10 @@ function ProblemPicker() {
           viewport={{ once: true, margin: "-50px" }}
         >
           {problems.map((problem) => (
-            <motion.button
+            <motion.a
               key={problem.label}
-              className={`open-chat flex items-center gap-3 px-5 py-5 rounded-2xl border-2 transition-all duration-300 group shadow-sm hover:shadow-md ${problem.bgColor} ${problem.hoverBg} ${problem.borderColor} ${problem.hoverBorder}`}
+              href="https://weedmedcare.lovable.app/"
+              className={`flex items-center gap-3 px-5 py-5 rounded-2xl border-2 transition-all duration-300 group shadow-sm hover:shadow-md ${problem.bgColor} ${problem.hoverBg} ${problem.borderColor} ${problem.hoverBorder}`}
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -150,7 +151,7 @@ function ProblemPicker() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
-            </motion.button>
+            </motion.a>
           ))}
         </motion.div>
       </div>

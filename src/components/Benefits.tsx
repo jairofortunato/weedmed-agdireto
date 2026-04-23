@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 const benefits = [
   {
@@ -131,7 +132,7 @@ function Benefits() {
                   {benefit.description}
                 </p>
                 <a
-                  href="https://weedmed.online/avaliacao"
+                  href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
                   onClick={(e) => {
                     e.stopPropagation();
                     (window as any).dataLayer = (window as any).dataLayer || [];

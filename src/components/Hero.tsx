@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 function Hero() {
 
@@ -75,7 +76,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <a
-              href="https://weedmed.online/avaliacao"
+              href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
               data-cta="hero"
               className="inline-flex items-center justify-center px-8 py-4 sm:px-10 sm:py-5 text-lg sm:text-xl font-semibold text-white rounded-full transition-all duration-300 ease-out hover:scale-105"
               style={{

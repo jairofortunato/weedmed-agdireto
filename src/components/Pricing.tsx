@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 export default function Pricing() {
   return (
@@ -75,7 +76,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="https://weedmed.online/avaliacao"
+              href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
               className="block text-center py-3.5 px-6 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#00B383', fontFamily: "'Inter', system-ui, sans-serif" }}
               data-cta="pricing_consulta"
@@ -89,7 +90,7 @@ export default function Pricing() {
             >
               Prefere falar ao vivo?{' '}
               <a
-                href="https://weedmed.online/paciente/agendar"
+                href={buildUrlWithUTMs("https://weedmed.online/paciente/agendar")}
                 className="underline hover:opacity-80 transition-opacity"
                 style={{ color: '#9ca3af' }}
               >

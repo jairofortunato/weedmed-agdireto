@@ -131,6 +131,12 @@ const { currentPath = '/' } = Astro.props
 </style>
 
 <script>
+  import { buildUrlWithUTMs } from '../utils/utm-tracker';
+
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="https://weedmed.online"]').forEach(link => {
+    link.href = buildUrlWithUTMs(link.href);
+  });
+
   const menuBtn = document.querySelector('.mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
 

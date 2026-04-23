@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 const doctors = [
   {
@@ -147,7 +148,7 @@ function Doctors() {
             </div>
 
             <a
-              href="https://weedmed.online/avaliacao"
+              href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
               onClick={() => {
                 (window as any).dataLayer = (window as any).dataLayer || [];
                 (window as any).dataLayer.push({ event: 'cta_click', cta_location: 'doctors' });

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -19,7 +20,7 @@ function Header() {
       {/* Promotional Banner */}
       <div className="py-2 text-center" style={{ backgroundColor: '#65DFA8' }}>
         <a
-          href="https://weedmed.online/avaliacao"
+          href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
           className="text-sm font-medium text-gray-900 underline hover:no-underline"
         >
           Sua consulta em poucos minutos por R$ 50,00 →
@@ -64,7 +65,7 @@ function Header() {
             {/* Right Side Actions */}
             <div className="flex items-center">
               <a
-                href="https://weedmed.online/avaliacao"
+                href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
                 className="hidden lg:inline-flex relative items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 ease-out"
                 style={{
                   background: 'linear-gradient(135deg, #523AC5 0%, #7c5ce7 100%)',
@@ -128,7 +129,7 @@ function Header() {
                 Depoimentos
               </button>
               <a
-                href="https://weedmed.online/avaliacao"
+                href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
                 onClick={() => setIsMenuOpen(false)}
                 className="relative inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-out"
                 style={{

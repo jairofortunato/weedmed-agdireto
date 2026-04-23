@@ -59,6 +59,13 @@ const ogImage = `${siteUrl}/og-image.png`
     <link rel="preconnect" href="https://connect.facebook.net" />
     <link rel="preconnect" href="https://www.facebook.com" />
 
+    <!-- UTM Tracker -->
+    <script>
+      import { captureUTMs } from '../utils/utm-tracker';
+      captureUTMs();
+    </script>
+    <!-- End UTM Tracker -->
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17754043995" is:inline></script>
     <script is:inline>

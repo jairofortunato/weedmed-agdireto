@@ -123,6 +123,12 @@
 </style>
 
 <script>
+  import { buildUrlWithUTMs } from '../utils/utm-tracker';
+
+  document.querySelectorAll<HTMLAnchorElement>('.hero-cta-wrapper a[href^="https://weedmed.online"]').forEach(link => {
+    link.href = buildUrlWithUTMs(link.href);
+  });
+
   document.querySelectorAll('.hero-cta-wrapper [data-cta]').forEach(link => {
     link.addEventListener('click', () => {
       window.dataLayer = window.dataLayer || [];

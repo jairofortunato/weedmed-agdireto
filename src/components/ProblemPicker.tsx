@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
+import { buildUrlWithUTMs } from '../utils/utm-tracker'
 
 interface PopupContent {
   intro: string
@@ -271,7 +272,7 @@ export default function ProblemPicker() {
 
               {/* CTA */}
               <a
-                href="https://weedmed.online/avaliacao"
+                href={buildUrlWithUTMs("https://weedmed.online/avaliacao")}
                 onClick={() => {
                   (window as any).dataLayer = (window as any).dataLayer || []
                   ;(window as any).dataLayer.push({

@@ -75,7 +75,7 @@ export default function Pricing() {
               ))}
             </ul>
             <a
-              href="https://weedmed.online/"
+              href="https://weedmed.online/avaliacao"
               className="block text-center py-3.5 px-6 rounded-full text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: '#00B383', fontFamily: "'Inter', system-ui, sans-serif" }}
               data-cta="pricing_consulta"
